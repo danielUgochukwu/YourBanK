@@ -46,9 +46,13 @@ const Hero = () => {
         <img
           src={arrow}
           alt="arrow"
-          className="w-[280px] absolute -z-10 -top-1 -right-6"
+          className="w-[280px] absolute -z-10 -top-1 -right-6 pointer-events-none"
         />
-        <img src={hero02} alt="hero" className="max-sm:w-full mx-auto" />
+        <img
+          src={hero02}
+          alt="hero"
+          className="max-sm:w-full mx-auto pointer-events-none"
+        />
       </div>
     </section>
   );
