@@ -35,10 +35,10 @@ export default {
         headerBg: "url('assets/images/abstract01.svg')",
       },
       screens: {
-        xl: "1990",
+        xl: "1200px",
         lg: "1024px",
         md: "768px",
-        sm: "390px",
+        sm: "480px",
       },
     },
   },

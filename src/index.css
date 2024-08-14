@@ -24,6 +24,10 @@ body {
     @apply flex justify-center items-center;
   }
 
+  .flex-start {
+    @apply flex justify-start items-start;
+  }
+
   .btn {
     @apply bg-primary-60 py-2 px-4 rounded-full text-gray-20 hover:bg-gray-10 hover:text-white transform duration-300 ease-in-out;
   }

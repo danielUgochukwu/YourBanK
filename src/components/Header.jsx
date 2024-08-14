@@ -34,11 +34,13 @@ const Header = () => {
   }, [mobileMenuOpen]);
 
   return (
-    <header className="py-8 px-16 bg-headerBg bg-contain bg-no-repeat">
-      <div className="flex items-center justify-between bg-gray-11 p-6 border border-gray-15 rounded-full">
-        <div className="flex-center">
-          <img src={logo} alt="logo" className="w-28 lg:w-36" />
-        </div>
+    <header className="py-8 px-8 bg-headerBg bg-contain bg-no-repeat">
+      <div className="flex items-center justify-between bg-gray-11 py-3 p-4 border border-gray-15 rounded-full">
+        <Link to="/">
+          <div className="flex-center">
+            <img src={logo} alt="logo" className="w-20 sm:w-28 lg:w-36" />
+          </div>
+        </Link>
         <nav className="hidden items-center w-full lg:flex">
           <ul className="flex flex-1 justify-center">
             {navList.map((item, i) => (
@@ -46,7 +48,7 @@ const Header = () => {
                 key={i}
                 className="text-base font-normal py-2 px-4 hover:bg-gray-15 hover:rounded-full"
               >
-                <Link to={`/${item.toLowerCase()}`}>{item}</Link>
+                <Link to={item.path}>{item.page}</Link>
               </li>
             ))}
           </ul>
@@ -62,10 +64,10 @@ const Header = () => {
           </div>
         </nav>
         <div
-          className="flex-center py-2 px-4 rounded-full bg-primary-60 cursor-pointer lg:hidden"
+          className="flex-center py-1 px-2 sm:py-2 sm:px-3 rounded-full bg-primary-60 cursor-pointer lg:hidden"
           onClick={toggleMobileMenu}
         >
-          <HiOutlineMenuAlt3 className="text-gray-10 text-3xl " />
+          <HiOutlineMenuAlt3 className="text-gray-10 text-lg " />
         </div>
       </div>
 
@@ -76,15 +78,15 @@ const Header = () => {
       >
         <div className="flex justify-end">
           <HiOutlineX
-            className="text-white text-3xl cursor-pointer"
+            className="text-white text-3lg cursor-pointer"
             onClick={toggleMobileMenu}
           />
         </div>
         <ul className="mt-10">
           {navList.map((item, i) => (
-            <li key={i} className="text-xl p-4">
+            <li key={i} className="text-sm p-4">
               {toggleMobileMenu}
-              <Link to={`/${item.toLocaleLowerCase()}`}>{item}</Link>
+              <Link to={item.path}>{item.page}</Link>
             </li>
           ))}
         </ul>
